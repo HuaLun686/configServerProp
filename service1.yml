@@ -1,0 +1,30 @@
+spring:
+  profiles:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/client1?serverTimezone=GMT%2B8&autoReconnect=true&socketTimeout=30000&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 1qaz!QAZ
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: equipment
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  output:
+    ansi:
+      enabled: always
+  jackson:
+    default-property-inclusion: always
+    time-zone:
+      GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.bean
+server:
+  port: 8077
+  tomcat:
+    uri-encoding: UTF-8
